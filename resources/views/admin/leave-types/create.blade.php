@@ -1,0 +1,3 @@
+<x-app-layout><x-slot name="header"><h2 class="font-semibold text-xl">Create Leave Type</h2></x-slot>
+<div class="py-8 max-w-2xl mx-auto sm:px-6 lg:px-8"><x-alert /><div class="rounded-xl bg-white border p-6">
+<form method="POST" action="{{ route('admin.leave-types.store') }}">@csrf @include('admin.leave-types._form')<div class="mt-4"><x-primary-button>Create</x-primary-button></div></form></div></div></x-app-layout>
