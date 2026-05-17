@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Middleware;
 
 use App\Enums\UserRole;
@@ -17,7 +16,7 @@ class EnsureRole
         $user = $request->user();
 
         if (! $user) {
-            abort(403, 'Unauthorized.');
+            abort(403, 'Unauthorized Access.');
         }
 
         $allowed = collect($roles)->map(fn (string $role) => UserRole::from($role));
