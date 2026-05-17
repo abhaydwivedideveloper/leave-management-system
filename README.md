@@ -22,19 +22,31 @@ A production-style internal web application built with **Laravel 10**, **MySQL**
 ## Setup
 
 ```bash
-# Clone and install dependencies
-composer install
-npm install && npm run build
+# Clone the repository
+git clone https://github.com/abhaydwivedideveloper/leave-management-system.git
+cd leave-management-system
 
-# Environment
+# Install PHP dependencies
+composer install
+
+# Install frontend dependencies
+npm install
+npm run build
+
+# Create environment file
 cp .env.example .env
+
+# Generate application key
 php artisan key:generate
 
-# Configure .env database credentials, then:
+# Configure your database credentials in .env file
+# Update DB_DATABASE, DB_USERNAME, DB_PASSWORD
+
+# Run migrations and seeders
 php artisan migrate --seed
 
-# If tables exist but users table is empty, run:
-php artisan db:seed
+# Start the application
+php artisan serve
 ```
 
 > **Important:** The app uses the database named in `.env` (`DB_DATABASE`, default: `leave_management`).  
